@@ -67,6 +67,7 @@ In both cases, the body of the response will contain the output of the sensu che
 ## Notes
 
 * CentOS was used because alpine linux doesn't include ntpq in any packages. It's kind of essential to the sensu plugin.
+* We should do a two-phase build (i.e. build container, run container, copy in go binary, build container from running container), but we don't.
 * We could add more checks, but again, it's a PoC. 
 * Similarly, supported HTTP methods/schemes could be tightened up. 
 * Stuff is hardcoded.
